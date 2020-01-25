@@ -23,6 +23,7 @@ class AmmoCalculator
             ->selectRaw('SUM(quantity) as ammo')
             ->groupBy('caliber_id')
             ->with('caliber')
-            ->get();
+            ->get()
+            ->sortBy('caliber.name');
     }
 }

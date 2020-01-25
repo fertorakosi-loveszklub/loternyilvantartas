@@ -15,4 +15,15 @@
         @endforeach
     </div>
 
+    <h1 class="mt-3 mb-3">Lövészet</h1>
+    @if(! empty($session))
+        <a href="{{ route('shooting.index') }}" class="btn btn-success btn-lg">
+            Folyamatban lévő lövészet megnyitása
+        </a>
+    @else
+        <a href="{{ route('shooting.create') }}" class="btn btn-success btn-lg">
+            Új lövészet indítása
+        </a>
+    @endif
+
 @endsection

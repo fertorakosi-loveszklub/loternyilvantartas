@@ -23,6 +23,9 @@
                     <li class="nav-item @if($menu == 'home') active @endif">
                         <a class="nav-link" href="/">Főoldal</a>
                     </li>
+                    <li class="nav-item @if($menu == 'shooting') active @endif">
+                        <a class="nav-link" href="{{ route('shooting.index') }}">Lövészet</a>
+                    </li>
                     <li class="nav-item @if($menu == 'ammo') active @endif">
                         <a class="nav-link" href="/ammo">Lőszernyilvántartás</a>
                     </li>

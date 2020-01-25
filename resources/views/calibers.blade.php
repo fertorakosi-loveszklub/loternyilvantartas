@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="mb-3">
-        <a href="{{ route('calibers.create') }}" class="btn btn-success">
+        <a href="{{ route('calibers.create') }}" class="btn btn-lg btn-success">
             Új kaliber
         </a>
     </div>

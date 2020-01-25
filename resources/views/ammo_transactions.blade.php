@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-9">
-            <a href="{{ route('ammo.create') }}" class="btn btn-success">
+            <a href="{{ route('ammo.create') }}" class="btn btn-lg btn-success">
                 Lőszerváltozás könyvelése
             </a>
 
@@ -12,8 +12,8 @@
                 <tr>
                     <th>Dátum</th>
                     <th>Kaliber</th>
-                    <th>Változás</th>
                     <th>Jogcím</th>
+                    <th class="text-right">Változás</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -21,7 +21,8 @@
                     <tr>
                         <td>{{ $transaction->created_at->format('Y. m. d.') }}</td>
                         <td>{{ $transaction->caliber->name }}</td>
-                        <td>
+                        <td>{{ $transaction->title }}</td>
+                        <td class="text-right">
                             <span
                                 @if ($transaction->quantity > 0)
                                 class="badge badge-success"
@@ -32,8 +33,6 @@
                                 {{ $transaction->quantity }}
                             </span>
                         </td>
-                        <td>{{ $transaction->title }}</td>
-
                     </tr>
                 @endforeach
                 </tbody>
