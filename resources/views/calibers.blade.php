@@ -14,6 +14,7 @@
             <th class="text-right"></th>
         </tr>
         </thead>
+        <tbody>
         @foreach($calibers as $caliber)
             <tr>
                 <td>{{ $caliber->name }}</td>
@@ -32,5 +33,6 @@
                 </td>
             </tr>
         @endforeach
+        </tbody>
     </table>
 @endsection

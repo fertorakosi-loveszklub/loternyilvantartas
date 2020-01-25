@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Utilities\Ammo\AmmoCalculator;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(AmmoCalculator $ammoCalculator)
     {
-        return view('home');
+        $ammos = $ammoCalculator->getAmmoForEachCaliber();
+
+        return view('home', compact('ammos'));
     }
 }

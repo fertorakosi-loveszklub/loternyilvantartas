@@ -9,4 +9,9 @@ class Caliber extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function ammoTransactions()
+    {
+        return $this->hasMany(AmmoTransaction::class);
+    }
 }

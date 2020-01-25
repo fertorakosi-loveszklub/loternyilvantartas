@@ -23,6 +23,9 @@
                     <li class="nav-item @if($menu == 'home') active @endif">
                         <a class="nav-link" href="/">Főoldal</a>
                     </li>
+                    <li class="nav-item @if($menu == 'ammo') active @endif">
+                        <a class="nav-link" href="/ammo">Lőszernyilvántartás</a>
+                    </li>
                     <li class="nav-item @if($menu == 'calibers') active @endif">
                         <a class="nav-link" href="{{ route('calibers.index') }}">Kaliberek</a>
                     </li>
@@ -33,6 +36,17 @@
 </header>
 <main>
     <div class="container">
+
+        @if ($errors->isNotEmpty())
+            <div class="alert alert-danger">
+                <ul class="mb-0">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @yield('content')
     </div>
 </main>
