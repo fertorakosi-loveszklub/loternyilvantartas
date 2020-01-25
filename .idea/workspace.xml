@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ShootingController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ShootingSession.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/ShootingSessionTransaction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Utilities/Shooting/ShootingSessionRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Utilities/ViewModels/ShootingSessionViewModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/shooting.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/shooting_create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/shootings.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/settings.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/loternyilvantartas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/loternyilvantartas.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Utilities/Ammo/AmmoCalculator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utilities/Ammo/AmmoCalculator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_25_144244_create_shooting_sessions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_25_144329_create_shooting_session_transactions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calibers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calibers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -119,6 +110,7 @@
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/spatie/db-dumper" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Wt5hUAwVKISbgMXul9v46aAn6h" />
@@ -177,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579956169788</updated>
-      <workItem from="1579956171516" duration="12243000" />
+      <workItem from="1579956171516" duration="13420000" />
     </task>
     <task id="LOCAL-00001" summary="Calibers">
       <created>1579960226273</created>
@@ -207,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579963292541</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Shooting sessions">
+      <created>1579981417520</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579981417520</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +216,8 @@
     <MESSAGE value="Calibers" />
     <MESSAGE value="Ammo transactions" />
     <MESSAGE value="Update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update gitignore" />
+    <MESSAGE value="Shooting sessions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shooting sessions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1579980592080">
@@ -232,25 +232,29 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="281" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579977511972" />
-    <state x="583" y="24" key="CommitChangelistDialog2" timestamp="1579981407619">
+    <state x="583" y="24" key="CommitChangelistDialog2" timestamp="1579981416817">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="24" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981407619" />
+    <state x="583" y="24" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981416817" />
     <state x="719" y="324" key="NewPhpClassDialog" timestamp="1579980549199">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="719" y="324" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579980549199" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1579963026913">
+    <state x="777" y="152" key="RollbackChangesDialog" timestamp="1579982304746">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1579963026913" />
+    <state x="777" y="152" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579982304746" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1579981418325">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981418325" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1579980788321">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579980788321" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1579980870411">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1579982453277">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579980870411" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579982453277" />
   </component>
 </project>

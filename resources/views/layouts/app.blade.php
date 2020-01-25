@@ -19,7 +19,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item @if($menu == 'home') active @endif">
                         <a class="nav-link" href="/">Főoldal</a>
                     </li>
@@ -31,6 +31,14 @@
                     </li>
                     <li class="nav-item @if($menu == 'calibers') active @endif">
                         <a class="nav-link" href="{{ route('calibers.index') }}">Kaliberek</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ml-auto">
+                <ul class="navbar-nav">
+                    <li class="nav-item @if($menu == 'settings') active @endif">
+                        <a class="nav-link" href="{{ route('settings.index') }}">Beállítások</a>
                     </li>
                 </ul>
             </div>
