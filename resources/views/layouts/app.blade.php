@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="{{ asset('icon.png') }}" type="image/png">
 </head>
 <body>
-<header>
+<header class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
         <div class="container">
             <a class="navbar-brand" href="/">Fertőrákosi Lövészklub</a>
@@ -23,16 +23,19 @@
                     <li class="nav-item @if($menu == 'home') active @endif">
                         <a class="nav-link" href="/">Főoldal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item @if($menu == 'calibers') active @endif">
+                        <a class="nav-link" href="{{ route('calibers.index') }}">Kaliberek</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
 </header>
-@yield('content')
+<main>
+    <div class="container">
+        @yield('content')
+    </div>
+</main>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

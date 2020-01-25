@@ -7,79 +7,50 @@ use Illuminate\Http\Request;
 
 class CaliberController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $calibers = Caliber::orderBy('name')->get();
+        return view('calibers', compact('calibers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('caliber', [
+            'caliber' => new Caliber()
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:calibers,name'
+        ]);
+
+        Caliber::create($request->all());
+
+        return redirect()->route('calibers.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Caliber  $caliber
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Caliber $caliber)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Caliber  $caliber
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Caliber $caliber)
     {
-        //
+        return view('caliber', [
+            'caliber' => $caliber
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Caliber  $caliber
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Caliber $caliber)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $caliber->update($request->all());
+
+        return redirect()->route('calibers.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Caliber  $caliber
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Caliber $caliber)
     {
-        //
+        $caliber->delete();
     }
 }

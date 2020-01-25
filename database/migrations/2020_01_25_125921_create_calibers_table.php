@@ -16,6 +16,7 @@ class CreateCalibersTable extends Migration
         Schema::create('calibers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('name');
         });
     }
 
