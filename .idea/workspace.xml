@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579956169788</updated>
-      <workItem from="1579956171516" duration="6003000" />
+      <workItem from="1579956171516" duration="6164000" />
     </task>
     <task id="LOCAL-00001" summary="Calibers">
       <created>1579960226273</created>
@@ -176,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579963025905</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ammo transactions">
+      <created>1579963231431</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579963231431</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,9 +206,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1579963026913" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1579963064835">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1579963283945">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579963064835" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579963283945" />
   </component>
 </project>
