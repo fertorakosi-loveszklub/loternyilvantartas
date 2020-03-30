@@ -13,7 +13,6 @@
 <header class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary text-white">
         <div class="container">
-            <a class="navbar-brand" href="/">Fertőrákosi Lövészklub</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,6 +21,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item @if($menu == 'home') active @endif">
                         <a class="nav-link" href="/">Főoldal</a>
+                    </li>
+                    <li class="nav-item @if($menu == 'members') active @endif">
+                        <a class="nav-link" href="/members">Tagok</a>
                     </li>
                     <li class="nav-item @if($menu == 'shooting') active @endif">
                         <a class="nav-link" href="{{ route('shooting.index') }}">Lövészet</a>

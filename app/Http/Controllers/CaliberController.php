@@ -52,5 +52,6 @@ class CaliberController extends Controller
     public function destroy(Caliber $caliber)
     {
         $caliber->delete();
+        return redirect()->route('calibers.index');
     }
 }

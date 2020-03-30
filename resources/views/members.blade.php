@@ -1,29 +1,31 @@
-@extends('layouts.app', ['menu' => 'calibers'])
+@extends('layouts.app', ['menu' => 'members'])
 
 @section('content')
     <div class="mb-3">
-        <a href="{{ route('calibers.create') }}" class="btn btn-lg btn-success">
-            Új kaliber
+        <a href="{{ route('members.create') }}" class="btn btn-lg btn-success">
+            Új tag
         </a>
     </div>
 
     <table class="table table-bordered">
         <thead class="thead-dark">
         <tr>
-            <th>Kaliber</th>
+            <th>Név</th>
+            <th>Szül. év</th>
             <th class="text-right"></th>
         </tr>
         </thead>
         <tbody>
-        @foreach($calibers as $caliber)
+        @foreach($members as $member)
             <tr>
-                <td>{{ $caliber->name }}</td>
+                <td>{{ $member->name }}</td>
+                <td>{{ $member->birth_year }}</td>
                 <td class="text-right">
-                    <a href="{{ route('calibers.edit', ['caliber'=> $caliber]) }}" class="btn btn-primary">
+                    <a href="{{ route('members.edit', ['member'=> $member]) }}" class="btn btn-primary">
                         Szerkesztés
                     </a>
 
-                    <form action="{{ route('calibers.destroy', ['caliber' => $caliber]) }}" method="POST" class="d-inline-block">
+                    <form action="{{ route('members.destroy', ['member'=> $member]) }}" method="POST" class="d-inline-block">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
 

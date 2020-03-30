@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/settings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/loternyilvantartas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/loternyilvantartas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Member.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/PurchasedAmmo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_29_101706_create_members_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_29_103718_create_purchased_ammos_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/member.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/members.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaliberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaliberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/calibers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calibers.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -17,7 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -123,7 +126,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -170,6 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579956169788</updated>
       <workItem from="1579956171516" duration="13420000" />
+      <workItem from="1585476523022" duration="3541000" />
     </task>
     <task id="LOCAL-00001" summary="Calibers">
       <created>1579960226273</created>
@@ -248,13 +252,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981418325" />
+    <state x="646" y="241" width="627" height="568" key="find.popup" timestamp="1585477253876">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="646" y="241" width="627" height="568" key="find.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1585477253876" />
     <state x="616" y="243" key="run.anything.popup" timestamp="1579980788321">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579980788321" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1579982453277">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1585478806793">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1585478806793" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579982453277" />
   </component>
 </project>
