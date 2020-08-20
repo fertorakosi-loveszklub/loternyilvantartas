@@ -19,7 +19,7 @@
                 <tbody>
                 @foreach($transactions as $transaction)
                     <tr>
-                        <td>{{ $transaction->created_at->format('Y. m. d.') }}</td>
+                        <td>{{ $transaction->created_at->tz('Europe/Budapest')->format('Y. m. d. H:i') }}</td>
                         <td>{{ $transaction->caliber->name }}</td>
                         <td>{{ $transaction->title }}</td>
                         <td class="text-right">
@@ -46,7 +46,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h1>{{ $ammo->ammo }}</h1>
-                        <span>{{ $ammo->caliber->name }} készleten</span>
+                        <span><strong>{{ $ammo->caliber->name }}</strong> készleten</span>
                     </div>
                 </div>
             @endforeach

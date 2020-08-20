@@ -2,18 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Member.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/PurchasedAmmo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_29_101706_create_members_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_29_103718_create_purchased_ammos_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/member.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/members.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Utilities/Ammo/PurchasedAmmoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_20_153322_add_member_id_to_shooting_session_transactions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/shooting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CaliberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CaliberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calibers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calibers.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MemberController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShootingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShootingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ShootingSessionTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ShootingSessionTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Utilities/Shooting/ShootingSessionRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Utilities/Shooting/ShootingSessionRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ammo_transactions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/member.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/member.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/members.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/members.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shooting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shooting.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +32,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,7 +128,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -136,12 +143,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nxu\Code\loternyilvantartas\app" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nxu\Code\loternyilvantartas\resources\views" />
       <recent name="C:\Users\nxu\Code\loternyilvantartas\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nxu\Code\loternyilvantartas\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -150,18 +157,7 @@
       <method v="2" />
     </configuration>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -174,6 +170,8 @@
       <updated>1579956169788</updated>
       <workItem from="1579956171516" duration="13420000" />
       <workItem from="1585476523022" duration="3541000" />
+      <workItem from="1585545666032" duration="101000" />
+      <workItem from="1597924306817" duration="6343000" />
     </task>
     <task id="LOCAL-00001" summary="Calibers">
       <created>1579960226273</created>
@@ -210,60 +208,45 @@
       <option name="project" value="LOCAL" />
       <updated>1579981417520</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="WIP: purchased ammo">
+      <created>1585545755089</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585545755089</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Calibers" />
     <MESSAGE value="Ammo transactions" />
     <MESSAGE value="Update gitignore" />
     <MESSAGE value="Shooting sessions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shooting sessions" />
+    <MESSAGE value="WIP: purchased ammo" />
+    <option name="LAST_COMMIT_MESSAGE" value="WIP: purchased ammo" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1579980592080">
+    <state x="707" y="232" key="NewPhpClassDialog" timestamp="1597926270644">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="765" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1579980592080" />
-    <state x="582" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579980563384">
+    <state x="707" y="232" key="NewPhpClassDialog/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597926270644" />
+    <state x="777" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597937022015">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="582" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579980563384" />
-    <state x="690" y="281" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579977511972">
+    <state x="777" y="435" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597937022015" />
+    <state x="668" y="242" width="583" height="566" key="find.popup" timestamp="1597927811285">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="281" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579977511972" />
-    <state x="583" y="24" key="CommitChangelistDialog2" timestamp="1579981416817">
+    <state x="668" y="242" width="583" height="566" key="find.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597927811285" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1597939289580">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="24" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981416817" />
-    <state x="719" y="324" key="NewPhpClassDialog" timestamp="1579980549199">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="719" y="324" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579980549199" />
-    <state x="777" y="152" key="RollbackChangesDialog" timestamp="1579982304746">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="777" y="152" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1579982304746" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1579981418325">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1579981418325" />
-    <state x="646" y="241" width="627" height="568" key="find.popup" timestamp="1585477253876">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="646" y="241" width="627" height="568" key="find.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1585477253876" />
-    <state x="616" y="243" key="run.anything.popup" timestamp="1579980788321">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579980788321" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1585478806793">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1585478806793" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1579982453277" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597939289580" />
   </component>
 </project>

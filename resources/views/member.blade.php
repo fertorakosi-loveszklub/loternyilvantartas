@@ -48,6 +48,26 @@
                     </div>
                 </div>
 
+                @foreach($calibers as $caliber)
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <div class="form-group">
+                                <label for="ammo_{{ $caliber->id }}">{{ $caliber->name }} lőszer</label>
+                                <input type="number"
+                                       min="-1000"
+                                       max="10000"
+                                       id="ammo_{{ $caliber->id }}"
+                                       name="ammo[{{ $caliber->id }}]"
+                                       class="form-control"
+                                       placeholder="Mennyiség"
+                                       required
+                                       value="{{ $ammoRepo->getAmmo($member, $caliber) }}">
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+
+
                 <button type="submit" class="btn btn-primary">Mentés</button>
             </form>
         </div>

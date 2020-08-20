@@ -15,7 +15,7 @@ class SettingsController extends Controller
 
     public function backup()
     {
-        $path = Str::random(8) . '.sql';
+        $path = Str::random(16) . '.sql';
 
         MySql::create()
             ->setDbName(config('database.connections.mysql.database'))

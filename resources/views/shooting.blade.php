@@ -30,7 +30,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4>{{ $ammo->ammo }}</h4>
-                                    <span>{{ $ammo->caliber->name }} kiadva</span>
+                                    <span><strong>{{ $ammo->caliber->name }}</strong> kiadva</span>
                                 </div>
                             </div>
                         </div>
@@ -52,13 +52,25 @@
                     <tbody>
                     @foreach($transactions as $transaction)
                         <tr>
-                            <td>{{ $transaction->caliber->name }}</td>
+                            <td>
+                                {{ $transaction->created_at->tz('Europe/Budapest')->format('H:i') }}
+                            </td>
+                            <td>
+                                @if ($transaction->member)
+                                    <span>{{ $transaction->member->name }} ({{ $transaction->member->birth_year }})</span>
+                                @else
+                                    <span class="text-muted">Közös lőszer</span>
+                                @endif
+                            </td>
                             <td>
                                 @if ($transaction->quantity > 0)
-                                    Kiadás
+                                    <span class="badge badge-warning">Kiadás</span>
                                 @else
-                                    Visszavételezés
+                                    <span class="badge badge-success">Visszavételezés</span>
                                 @endif
+                            </td>
+                            <td>
+                                {{ $transaction->caliber->name }}
                             </td>
                             <td class="text-right">
                                 {{ abs($transaction->quantity) }} db lőszer
@@ -83,15 +95,29 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label for="giveout_member">Tag</label>
+                        <select name="member" id="giveout_member" class="form-control" data-target-class="giveout">
+                            <option value="">- Közös lőszer -</option>
+                            @foreach($members as $member)
+                                <option value="{{ $member->id }}">
+                                    {{ $member->name }} ({{ $member->birth_year }})
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <p class="alert alert-info d-none" id="giveout-info">
+                        A kivételezett lőszer a tag saját lőszereként kerül elmentésre.
+                    </p>
                     @foreach($calibers as $caliber)
                         <div class="form-group">
                             <label for="quantity_{{ $caliber->id }}">{{ $caliber->name }}</label>
                             <input type="number"
-                                   class="form-control"
+                                   class="form-control giveout-ammo"
                                    min="0"
                                    step="1"
                                    name="quantity[{{ $caliber->id }}]"
-                                   id="quantity_{{ $caliber->id }}"
+                                   id="giveout_quantity_{{ $caliber->id }}"
                             >
                         </div>
                     @endforeach
@@ -115,6 +141,17 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label for="takeback_member">Tag</label>
+                        <select name="member" id="takeback_member" class="form-control" data-target-class="giveout">
+                            <option value="">- Közös lőszer -</option>
+                            @foreach($members as $member)
+                                <option value="{{ $member->id }}">
+                                    {{ $member->name }} ({{ $member->birth_year }})
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     @foreach($calibers as $caliber)
                         <div class="form-group">
                             <label for="quantity_{{ $caliber->id }}">{{ $caliber->name }}</label>
@@ -123,7 +160,7 @@
                                    min="0"
                                    step="1"
                                    name="quantity[{{ $caliber->id }}]"
-                                   id="quantity_{{ $caliber->id }}"
+                                   id="takeback_quantity_{{ $caliber->id }}"
                             >
                         </div>
                     @endforeach
@@ -155,7 +192,7 @@
                         <p class="alert alert-info">
                             A lövészet során az alábbi lőszermennyiség fogyott. Ne felejtsd el rögzíteni a papír alapú lőszernaplóban.
                             <br>
-                            <span class="font-weight-bold">A változások a rendszer nyilvántartásában automatikusan rögzítésre kerülnek.</span>
+                            <span class="font-weight-bold">A változások a lőszernyilvántartásban automatikusan rögzítésre kerülnek.</span>
                         </p>
 
                         <table class="table table-condensed">
@@ -180,4 +217,7 @@
         </form>
     </div>
 
+    <script>
+        window.member_ammo = {!! json_encode($memberAmmo) !!};
+    </script>
 @endsection

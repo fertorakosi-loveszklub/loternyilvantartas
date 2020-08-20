@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1>{{ $ammo->ammo }}</h1>
-                        <span>{{ $ammo->caliber->name }} készleten</span>
+                        <span><strong>{{ $ammo->caliber->name }}</strong> készleten</span>
                     </div>
                 </div>
             </div>

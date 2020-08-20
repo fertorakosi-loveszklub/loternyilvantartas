@@ -12,6 +12,7 @@
         <tr>
             <th>Név</th>
             <th>Szül. év</th>
+            <th>Lőszer</th>
             <th class="text-right"></th>
         </tr>
         </thead>
@@ -20,6 +21,17 @@
             <tr>
                 <td>{{ $member->name }}</td>
                 <td>{{ $member->birth_year }}</td>
+                <td>
+                    @foreach($calibers as $caliber)
+                        @if (($ammo = $ammoRepository->getAmmo($member, $caliber)) > 0)
+                            <p class="mb-0">
+                                <small class="text-muted">
+                                    <strong>{{ $caliber->name }}:</strong> {{ $ammo }}
+                                </small>
+                            </p>
+                        @endif
+                    @endforeach
+                </td>
                 <td class="text-right">
                     <a href="{{ route('members.edit', ['member'=> $member]) }}" class="btn btn-primary">
                         Szerkesztés

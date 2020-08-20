@@ -10,6 +10,7 @@ class ShootingSessionTransaction extends Model
         'shooting_session_id',
         'caliber_id',
         'quantity',
+        'member_id',
     ];
 
     public function shootingSession()
@@ -20,5 +21,10 @@ class ShootingSessionTransaction extends Model
     public function caliber()
     {
         return $this->belongsTo(Caliber::class);
+    }
+
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
     }
 }

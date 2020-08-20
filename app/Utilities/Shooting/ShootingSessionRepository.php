@@ -8,11 +8,20 @@
 namespace App\Utilities\Shooting;
 
 use App\AmmoTransaction;
+use App\Member;
 use App\ShootingSession;
+use App\Utilities\Ammo\PurchasedAmmoRepository;
 use App\Utilities\ViewModels\ShootingSessionViewModel;
 
 class ShootingSessionRepository
 {
+    protected $ammoRepository;
+
+    public function __construct(PurchasedAmmoRepository $ammoRepository)
+    {
+        $this->ammoRepository = $ammoRepository;
+    }
+
     public function getActiveSession()
     {
         return ShootingSession::whereNull('closed_at')->first();
@@ -35,6 +44,7 @@ class ShootingSessionRepository
     {
         return $session->transactions()
             ->orderBy('created_at', 'desc')
+            ->with('member')
             ->get();
     }
 
@@ -53,11 +63,21 @@ class ShootingSessionRepository
     public function giveout(ShootingSession $session, $request)
     {
         $this->saveQuantityChange($session, $request);
+
+        if ($request->filled('member')) {
+            $member = Member::find($request->get('member'));
+            $this->ammoRepository->adjustAmmoFromGiveout($member, $request->get('quantity', []));
+        }
     }
 
     public function takeback(ShootingSession $session, $request)
     {
         $this->saveQuantityChange($session, $request, -1);
+
+        if ($request->filled('member')) {
+            $member = Member::find($request->get('member'));
+            $this->ammoRepository->reduceAmmoAfterTakeback($member, $session, $request->get('quantity', []));
+        }
     }
 
     public function finishSession(ShootingSession $session)
@@ -85,10 +105,11 @@ class ShootingSessionRepository
     protected function saveQuantityChange(ShootingSession $session, $request, $multiplier = 1)
     {
         $transactions = collect($request->get('quantity'))
-            ->map(function($quantity, $caliberId) use ($multiplier) {
+            ->map(function($quantity, $caliberId) use ($multiplier, $request) {
                 return [
                     'quantity' => $quantity * $multiplier,
                     'caliber_id' => $caliberId,
+                    'member_id' => $request->get('member', null)
                 ];
             })
             ->filter->quantity

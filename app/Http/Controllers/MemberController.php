@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Caliber;
 use App\Member;
+use App\Utilities\Ammo\PurchasedAmmoRepository;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -12,11 +14,15 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PurchasedAmmoRepository $ammoRepository)
     {
-        $members = Member::orderBy('updated_at', 'desc')->get();
+        $members = Member::orderBy('updated_at', 'desc')
+            ->with('purchasedAmmo')
+            ->get();
 
-        return view('members', compact('members'));
+        $calibers = Caliber::all();
+
+        return view('members', compact('members', 'calibers', 'ammoRepository'));
     }
 
     /**
@@ -24,10 +30,14 @@ class MemberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(PurchasedAmmoRepository $ammoRepo)
     {
+        $calibers = Caliber::all();
+
         return view('member', [
-            'member' => new Member()
+            'member' => new Member(),
+            'ammoRepo' => $ammoRepo,
+            'calibers' => $calibers,
         ]);
     }
 
@@ -37,14 +47,20 @@ class MemberController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, PurchasedAmmoRepository $ammoRepo)
     {
         $request->validate([
             'name' => 'required',
             'birth_year' => 'required|integer|min:1900|max:2030'
         ]);
 
-        Member::create($request->all());
+        $member = Member::create($request->all());
+        $calibers = Caliber::all()->keyBy('id');
+
+        foreach ($request->get('ammo', []) as $caliberId => $ammo) {
+            $ammoRepo->setAmmo($member, $calibers[$caliberId], $ammo);
+        }
+
         return redirect()->route('members.index');
     }
 
@@ -54,9 +70,10 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Member $member)
+    public function edit(Member $member, PurchasedAmmoRepository $ammoRepo)
     {
-        return view('member', compact('member'));
+        $calibers = Caliber::all();
+        return view('member', compact('member', 'ammoRepo', 'calibers'));
     }
 
     /**
@@ -66,7 +83,7 @@ class MemberController extends Controller
      * @param  \App\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Member $member)
+    public function update(Request $request, Member $member, PurchasedAmmoRepository $ammoRepo)
     {
         $request->validate([
             'name' => 'required',
@@ -74,6 +91,12 @@ class MemberController extends Controller
         ]);
 
         $member->update($request->all());
+
+        $calibers = Caliber::all()->keyBy('id');
+
+        foreach ($request->get('ammo', []) as $caliberId => $ammo) {
+            $ammoRepo->setAmmo($member, $calibers[$caliberId], $ammo);
+        }
 
         return redirect()->route('members.index');
     }
