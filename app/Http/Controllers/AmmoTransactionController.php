@@ -3,16 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\AmmoTransaction;
+use App\Caliber;
 use App\Utilities\Ammo\AmmoCalculator;
 use Illuminate\Http\Request;
 
 class AmmoTransactionController extends Controller
 {
-    public function index(AmmoCalculator $calculator)
+    public function index(Request $request, AmmoCalculator $calculator)
     {
-        $transactions = AmmoTransaction::orderBy('created_at', 'desc')->paginate(50);
+        $calibers = Caliber::orderBy('name')->get();
+
+        $transactions = AmmoTransaction::orderBy('created_at', 'desc')
+            ->when($request->filled('caliber_id'), function ($q) use ($request) {
+                $q->where('caliber_id', $request->get('caliber_id'));
+            })
+            ->paginate(50);
 
         return view('ammo_transactions', [
+            'calibers' => $calibers,
             'transactions' => $transactions,
             'ammos' => $calculator->getAmmoForEachCaliber(),
         ]);

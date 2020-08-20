@@ -3,9 +3,31 @@
 @section('content')
     <div class="row">
         <div class="col-lg-9">
-            <a href="{{ route('ammo.create') }}" class="btn btn-lg btn-success">
-                Lőszerváltozás könyvelése
-            </a>
+            <div class="row">
+                <div class="col">
+                    <a href="{{ route('ammo.create') }}" class="btn btn-lg btn-success">
+                        Lőszerváltozás könyvelése
+                    </a>
+                </div>
+                <div class="col ml-auto">
+                    <form method="GET" id="caliberFilter">
+                        <select name="caliber_id"
+                                id="caliber_id"
+                                class="form-control form-control-lg"
+                                onchange="document.getElementById('caliberFilter').submit()"
+                        >
+                            <option value="">- Minden kaliber -</option>
+                            @foreach($calibers as $caliber)
+                                <option value="{{ $caliber->id }}"
+                                        @if (request('caliber_id') == $caliber->id) selected @endif
+                                >
+                                    {{ $caliber->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </form>
+                </div>
+            </div>
 
             <table class="table table-bordered mt-3 mb-3">
                 <thead class="thead-dark">
