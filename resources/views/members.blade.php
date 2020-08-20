@@ -1,10 +1,17 @@
 @extends('layouts.app', ['menu' => 'members'])
 
 @section('content')
-    <div class="mb-3">
-        <a href="{{ route('members.create') }}" class="btn btn-lg btn-success">
-            Új tag
-        </a>
+    <div class="row mb-3">
+        <div class="col">
+            <a href="{{ route('members.create') }}" class="btn btn-lg btn-success">
+                Új tag
+            </a>
+        </div>
+        <div class="col-4 ml-auto">
+            <form method="GET">
+                <input class="form-control form-control-lg" type="text" name="q" value="{{ request('q') }}" placeholder="Keresés">
+            </form>
+        </div>
     </div>
 
     <table class="table table-bordered">
