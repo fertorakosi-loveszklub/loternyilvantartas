@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="" />
+    <list default="true" id="45b4ea55-755c-476d-a822-6b4fe4ec366a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/shooting.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/shooting.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,7 +151,7 @@
       <workItem from="1579956171516" duration="13420000" />
       <workItem from="1585476523022" duration="3541000" />
       <workItem from="1585545666032" duration="101000" />
-      <workItem from="1597924306817" duration="6755000" />
+      <workItem from="1597924306817" duration="7045000" />
     </task>
     <task id="LOCAL-00001" summary="Calibers">
       <created>1579960226273</created>
@@ -253,9 +256,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="668" y="242" width="583" height="566" key="find.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597927811285" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1597939539468">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1597939992061">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597939539468" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.124.1920.1050@0.0.1920.1050" timestamp="1597939992061" />
   </component>
 </project>

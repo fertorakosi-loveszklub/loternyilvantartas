@@ -1,6 +1,6 @@
 require('select2');
 
-$('#giveout_member').select2({
+$('#giveout_member, #takeback_member').select2({
     theme: 'bootstrap4'
 });
 
